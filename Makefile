@@ -12,6 +12,10 @@ srcComplexity.o : srcComplexity.cpp srcMLXPathCount.hpp
 srcMLXPathCount.o : srcMLXPathCount.cpp srcMLXPathCount.hpp
 	g++ -std=c++17 --coverage -I/usr/include/libxml2 -c $<
 
+.PHONY: test
+test : srccomplexity coverage/clean
+	./srccomplexity srcMLXPathCount.cpp.xml
+
 .PHONY: coverage
 coverage : srccomplexity
 	gcov srcComplexity.gcda srcMLXPathCount.gcda
