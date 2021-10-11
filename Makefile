@@ -16,6 +16,7 @@ srcMLXPathCount.o : srcMLXPathCount.cpp srcMLXPathCount.hpp
 test : srccomplexity coverage/clean
 	./srccomplexity srcMLXPathCount.cpp.xml
 	./srccomplexity srcMLXPathCount.cpp.xml srcMLXPathCount.cpp.xml || true
+	./srccomplexity || true
 
 .PHONY: coverage
 coverage : srccomplexity
